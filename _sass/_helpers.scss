@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Helpers and Utility Classes
+   ========================================================================== */
+
+.wrap {
+  margin: 0 auto;
+}
+
+/*
+   Typography
+   ========================================================================== */
+
+/* capitalize all letters */
+
+.all-caps {
+  text-transform: uppercase;
+}
+
+/* center text */
+
+.center {
+  text-align: center;
+}
+
+/* remove bullets from list items */
+
+/**
+ *  <ul class="unstyled-list">
+ *    <li>Item 1</li>
+ *    <li>Item 2</li>
+ *  </ul>
+ */
+
+.unstyled-list {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    list-style-type: none;
+  }
+}
+
+/*
+   Image alignment
+   ========================================================================== */
+
+/* float left */
+
+.pull-left {
+  float: left;
+  padding-right: $gutter;
+}
+
+/* float right */
+
+.pull-right {
+  float: right;
+  padding-left: $gutter;
+}
+
+/* align center */
+.pull-center {
+  border-bottom: none;
+  text-align: center;
+  display: block;
+}
+
+/*
+   Image layout in <figure>
+   ========================================================================== */
+
+figure {
+  text-align: center;
+  &.custom {
+    img {
+      margin: 0 30px 7px;
+      text-align: center;
+      //clear: left;
+    }
+  }
+
+  &.single {
+    width: 80%;
+    text-align: center;
+    margin: 0 auto;
+    figcaption {
+      margin-top: 10px;
+      clear: left;
+    }
+  }
+
+  /* 2 images in a row. should be of equal height/width to maintain layout */
+
+  &.half {
+    text-align: center;
+    @include media($large) {
+      img {
+        width: 47.5%;
+        float: left;
+        margin-right: 2.5%;
+        margin-left:0;
+      }
+      figcaption {
+        clear: left;
+      }
+    }
+  }
+
+  /* 3 images in a row. should be of equal height/width to maintain layout */
+
+  &.third {
+    text-align: center;
+    @include media($large) {
+      img {
+        width: 30.8%;
+        float: left;
+        margin-right: 2.5%;
+        margin-left:0;
+      }
+      figcaption {
+        clear: left;
+      }
+    }
+  }
+}
+
+/*
+   No shadows
+   ========================================================================== */
+.no-shadows{
+  img {
+    &:hover {
+      @include box-shadow(0 0 0 rgba($black, .20));
+    }
+  }
+}
+
+
+/*
+   No opacity
+   ========================================================================== */
+.no-opacity{
+  opacity: 1;
+}
+
+/*
+   No scrollbars
+   ========================================================================== */
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/*
+   Link arrow (used in link post titles)
+   ========================================================================== */
+
+.link-arrow {
+  font-weight: 100;
+  text-decoration: underline;
+  font-style: normal;
+}
+
+/*
+   Twitter feed alignment
+   ========================================================================== */
+.responsive-twitter {
+  margin-top: 50px;
+  width: 100%;
+  @media only screen and (min-width:500px) {
+    margin: 50px auto 0;
+    width: 500px;
+  }
+  @media only screen and (min-width:1200px) {
+    margin-top: 0;
+    width: 200px;
+    z-index: 10;
+    position: absolute;
+    right: 0;
+    top: 388px;
+  }
+  @media only screen and (min-width:1500px) {
+    width: 250px;
+  }
+}
